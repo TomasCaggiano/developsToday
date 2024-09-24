@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import './CountryList.css';
 const CountryList = () => {
     const [countries, setCountries] = useState([]);
     const [loading, setLoading] = useState(true); 

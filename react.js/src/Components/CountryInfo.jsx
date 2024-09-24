@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-
+import './CountryInfo.css'
 const CountryInfo = () => {
     const { countryCode } = useParams();
     const [countryData, setCountryData] = useState(null);
