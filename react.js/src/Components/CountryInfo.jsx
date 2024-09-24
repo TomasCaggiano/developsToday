@@ -34,18 +34,20 @@ const CountryInfo = () => {
 
     return (
         <div>
-            <h1>{countryData.name}</h1>
-            <img src={countryData.flagUrl} alt={`${countryData.name} flag`} />
+            <h1>Ukraine</h1>
+            <img src={countryData.flagUrl} alt="Ukrainian flag" />
+            
             <h2>Border Countries</h2>
             <ul>
                 {countryData.borderCountries.map(borderCountry => (
-                    <li key={borderCountry}>
-                        <Link to={`/country/${borderCountry}`}>
-                            {borderCountry}
+                    <li key={borderCountry.countryCode}>
+                        <Link to={`/country/${borderCountry.countryCode}`}>
+                            {borderCountry.commonName}
                         </Link>
                     </li>
                 ))}
             </ul>
+
             <h2>Population Data</h2>
             <table>
                 <thead>
@@ -55,10 +57,10 @@ const CountryInfo = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {countryData.populationData.map(data => (
-                        <tr key={data.year}>
-                            <td>{data.year}</td>
-                            <td>{data.population}</td>
+                    {countryData.populationData.map((entry, index) => (
+                        <tr key={index}>
+                            <td>{entry.year}</td>
+                            <td>{entry.value}</td>
                         </tr>
                     ))}
                 </tbody>

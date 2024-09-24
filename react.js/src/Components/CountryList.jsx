@@ -18,10 +18,10 @@ const CountryList = () => {
                 const data = await response.json();
                 setCountries(data);
             } catch (err) {
-                console.error('Error fetching countries:', err); // Log de error
-                setError('Failed to fetch countries. Please try again later.'); // Mensaje de error
+                console.error('Error fetching countries:', err); 
+                setError('Failed to fetch countries. Please try again later.'); 
             } finally {
-                setLoading(false); // Termina la carga
+                setLoading(false);
             }
         };
 
